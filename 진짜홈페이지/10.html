@@ -1,0 +1,498 @@
+﻿
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="utf-8" />
+    <title>2017648052 손민지</title>
+    <style>
+           h1{
+            color : black;
+            font-family: verdana;
+            background-color:yellow;
+
+            }
+             div{
+            background-color:yellow;
+            color : black;
+
+        }
+            nav {
+
+            display : block;
+            width :500px;
+
+            }
+            p{
+            font-size: 30px;}
+            h2{
+            width:500px}
+            span{
+            style="border: 5px solid yellow;
+            }
+
+    </style>
+</head>
+<body>
+    <br />
+    <center>
+        <h1> </h1>
+        <hr>
+        <nav>
+            <pre>
+
+       import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame {
+private JButton ok, reset;
+private JTextField tf;
+MyFrame() {
+setTitle("My Frame");
+setSize(600,400);
+setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+ JPanel pc = new JPanel();
+ add(pc, BorderLayout.CENTER);
+ JTextField tf;
+
+ pc.add(new JTextField(20));
+ 
+ tf.addActionListener(new ActionListener() {
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println(tf.getText()); //tf.getSelectedText()
+    } 
+ });
+ setVisible(true);
+
+}
+public static void main(String[] args) {
+new MyFrame();
+}
+
+
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+class MyFrame extends JFrame implements ActionListener{
+    
+private JButton ok, reset;
+private JTextField tf;
+MyFrame() {
+setTitle("My Frame");
+setSize(600,400);
+setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+ JPanel pc = new JPanel();
+ add(pc, BorderLayout.CENTER);
+ JTextField tf;
+ JButton btn;
+ pc.add(new JTextField(20));
+ pc.add(btn=new JButton("OK"));
+ tf.addActionListener(this);
+ btn.addActionListener(this);
+ setVisible(true);
+
+}
+public static void main(String[] args) {
+new MyFrame();
+}
+
+}
+
+
+
+
+
+private JButton ok, reset;
+private JTextField tf;
+
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+class MyFrame extends JFrame implements ActionListener{
+    
+
+JTextField tf;
+MyFrame() {
+setTitle("My Frame");
+setSize(600,400);
+setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+ JPanel pc = new JPanel();
+ add(pc, BorderLayout.CENTER);
+ 
+ JButton btn;
+ pc.add(new JTextField(20));
+ pc.add(btn=new JButton("OK"));
+ tf.addActionListener(this);
+ btn.addActionListener(this);
+ setVisible(true);
+
+}
+public static void main(String[] args) {
+new MyFrame();
+}
+ @Override
+ public void actionPerformed(ActionEvent e) {
+     Object obj = e.getSource();
+     if(obj insteanceof JTextField)
+         System.out.println(x);
+ }
+
+
+}
+
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame implements ActionListener {
+private JButton ok, reset;
+private JTextField tf;
+
+MyFrame() {
+    setTitle("My Frame");
+    setSize(600,400);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    
+    setLayout(new GridLayout(10,1));
+    JPanel p1 = new JPanel();
+    p1.add(new JLabel("Name: "));
+    p1.add(tf=new JTextField(30));
+    
+    JPanel p2 = new JPanel();
+    p2.add(ok=new JButton("OK"));
+    p2.add(reset=new JButton("Reset"));
+    
+    add(new JPanel());
+    add(p1); add(p2);
+    
+    ok.addActionListener(this);
+    reset.addActionListener(this);
+    tf.addActionListener(this);
+    setVisible(true);
+}
+
+@Override
+public void actionPerformed(ActionEvent e) {
+    Object obj = e.getSource();
+    JButton btn = null;
+    if (obj instanceof JTextField)
+        btn = ok;
+    else
+        btn = (JButton)obj;
+    String s = tf.getText();
+    if (btn == ok && s.equals("Heejae Yang"))
+        System.exit(0);
+    tf.setText("");
+}
+
+public static void main(String[] args) {
+new MyFrame();
+}
+}
+
+
+
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+
+MyFrame() {
+    setTitle("My Frame");
+    setSize(600,400);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    
+    JPanel pc = new JPanel();
+    add(pc,BorderLayout.CENTER);
+    JTextArea ta;
+        
+    JScrollPane pane = new JScrollPane(
+            ta = new JTextArea(10,20));
+    ta.setBackground(Color.GREEN);
+    pc.add(pane);
+    setVisible(true);
+}
+
+
+
+public static void main(String[] args) {
+new MyFrame();
+}
+}
+
+
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends JFrame{
+
+MyFrame() {
+    setTitle("My Frame");
+    setSize(600,400);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    
+    final JTextArea ta = new JTextArea();
+    ta.setMargin(new Insets(3,5,3,5));
+    JScrollPane pane = new JScrollPane(ta,
+    JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+    JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    
+    add(pane, BorderLayout.CENTER);
+    JPanel ps = new JPanel();
+    JButton btn = new JButton("OK");
+    
+    btn.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+    String selected = ta.getSelectedText();
+    if (selected != null)
+    ta.setText(selected);
+    }
+    });
+    ps.add(btn);
+    add(ps, BorderLayout.SOUTH);
+    setVisible(true);
+}
+
+
+
+public static void main(String[] args) {
+new MyFrame();
+}
+}
+
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.Random;
+
+class MyFrame extends JFrame {
+    MyFrame() {
+        setTitle("My Frame");
+        setSize(600,400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+    Random rand = new Random();
+    JPanel pc = new JPanel();
+    pc.setLayout(new GridLayout(5,5));
+    
+    for (int i=0; i<25; i++) {
+                        JPanel p=new JPanel();
+                        p.setBackground(new Color(rand.nextInt(256),
+                        rand.nextInt(256), rand.nextInt(256)));
+                        pc.add(p);
+                        }
+                        add(pc, BorderLayout.CENTER);
+                        setVisible(true);
+                        }
+                        public static void main(String[] args) {
+                        new MyFrame();
+                        }
+                        }
+                        import javax.swing.*;
+                        import java.awt.*;
+                        class MyFrame extends JFrame {
+                        MyFrame() {
+                        setTitle("My Frame");
+                        setSize(600,400);
+                        setDefaultCloseOperation(EXIT_ON_CLOSE);
+                        JPanel p1=new JPanel();
+                        p1.add(new JLabel("Hello"));
+                        p1.add(new JTextField(10));
+                        p1.add(new JButton("OK"));
+                        JPanel p2=new JPanel();
+                        p2.add(new JLabel("Kyungsung"));
+                        p2.add(new JTextField(" Kyungsung "));
+    p2.add(new JButton(" Click"));
+                        add(p1, BorderLayout.NORTH);
+                        add(p2, BorderLayout.CENTER);
+                        setVisible(true);
+                        }
+                        public static void main(String[] args) {
+                        UIManager.put("Button.font", new Font("SansSerif", Font.BOLD, 14));
+                        UIManager.put("Label.font", new Font("SansSerif", Font.ITALIC, 14));
+                        UIManager.put("TextField.font", new Font("Setif", Font.PLAIN, 14));
+                        new MyFrame();
+                        }
+                        }
+                        과제 1
+                        import javax.swing.*;
+                        import java.awt.*;
+                        import java.awt.event.*;
+                        import java.io.*;
+                        class MyFrame extends JFrame implements ActionListener{
+                        private JTextArea ta;
+                        MyFrame() {
+                        setTitle("My Frame");
+                        setSize(600,400);
+                        setDefaultCloseOperation(EXIT_ON_CLOSE);
+                        ta.setFont(new Font("SansSerif",Font.PLAIN,20));
+                        ta.setBackground(new Color(0,0,0));
+                        ta.setForeground(Color.WHITE);
+                        JScrollPane pane=new JScrollPane(ta);
+                        add(pane,BorderLayout.CENTER);
+                        JPanel ps=new JPanel();
+                        add(ps,BorderLayout.SOUTH);
+                        ps.add(new JButton("OK"));
+                        JButton b;
+                        ps.add(b=new JButton("OK"));
+                        b.addActionListener(this);
+                        setVisible(true);
+                        }
+                        public static void main(String[] args) {
+                        new MyFrame();
+                        }
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                        String s=ta.getText();
+                        if(s.length()= =0)
+                        return;
+                        try {
+                        FileWriter wr=new FileWriter("C:/Temp/memo.txt");
+        wr.write(s);
+        wr.close();
+        }catch(IOException e2) {
+            
+        }
+}
+}
+
+
+
+
+
+
+
+//
+@Override
+public void actionPerformed(ActionEvent e) {
+    FileReader rd = new FileReader("");
+    int c = rd.read();
+    ta.setText);
+
+//
+
+
+
+
+
+2. 
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.util.Random;
+
+class MyFrame extends JFrame implements ActionListener{
+    private Random rand;
+    private JButton[] btns;
+MyFrame() {
+    setTitle("My Frame");
+    setSize(400,600);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    rand = new Random();
+    btns = new JButton[5];
+    
+    
+    JPanel pn,pc,ps;
+    pn = new JPanel();
+    pc = new JPanel();
+    ps = new JPanel();
+    add(pn,BorderLayout.NORTH);
+    add(pc,BorderLayout.CENTER);
+    add(ps,BorderLayout.SOUTH);
+    JButton b_try;
+    
+    pn.add(b_try=new JButton("Try"));
+    b_try.addActionListener(
+            new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        
+        setColors();
+        }
+    });
+    ps.add(new JLabel());
+    
+    pc.setLayout(new GridLayout(5,1));
+    
+    for(int i =0; i<5; i++) {
+                       pc.add(btns[i]=new JButton(String.valueOf(i+1)));
+                       btns[i].addActionListener(this);
+                       setVisible(true);
+                       }
+                       }
+                       private void setColors() {
+                       for(int i=0; i<5; i++) {
+        btns[i].setBackground(
+                new Color(rand.nextInt(0x1000000)));
+}
+}
+public static void main(String[] args) {
+
+new MyFrame();
+}
+@Override
+public void actionPerformed(ActionEvent e) {
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+        </nav>
+        <div>
+            <hr />
+            <h5>만든이 : 2017648052 손민지</h5>
+            <h5>오픈소프트웨어</h5>
+            <h5>
+                출처 : <a href="https://m.blog.naver.com/PostView.nhn?blogId=hjyang0&logNo=153936820&proxyReferer=https%3A%2F%2Fwww.google.com%2F">https://m.blog.naver.com/PostView.nhn?blogId=hjyang0&logNo=153936820&proxyReferer=https%3A%2F%2Fwww.google.com%2F</a> <br />
+            </h5>
+            <br>
+            <br>
+    </center>
+    </div>
+</body>
+<script type="text/javascript">
+        var d = new Date();
+        var currentDate = d.getFullYear() + "년 " + ( d.getMonth() + 1 ) + "월 " + d.getDate() + "일";
+        var currentTime = d.getHours() + "시 " + d.getMinutes() + "분 " + d.getSeconds() + "초";
+        var result = document.getElementById("time-result");
+        result.innerHTML =  currentDate + "TIME" + currentTime ;
+</script>
+</html>

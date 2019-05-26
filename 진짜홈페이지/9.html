@@ -1,0 +1,149 @@
+﻿
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="utf-8" />
+    <title>2017648052 손민지</title>
+    <style>
+           h1{
+            color : black;
+            font-family: verdana;
+            background-color:yellow;
+
+            }
+             div{
+            background-color:yellow;
+            color : black;
+
+        }
+            nav {
+
+            display : block;
+            width :500px;
+
+            }
+            p{
+            font-size: 30px;}
+            h2{
+            width:500px}
+            span{
+            style="border: 5px solid yellow;
+            }
+
+    </style>
+</head>
+<body>
+    <br />
+    <center>
+        <h1> </h1>
+        <hr>
+        <nav>
+            <pre>
+
+                import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+
+public class RevLines extends JFrame implements ActionListener {
+   private JButton[] btns;
+   private JTextArea ta;
+
+   public RevLines() {
+      setTitle("Reverse Lines");
+      setSize(600, 400);
+      setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+      ta = new JTextArea();
+      btns = new JButton[2];
+      btns[0] = new JButton("OK");
+      btns[1] = new JButton("Clear");
+      for(JButton b : btns)
+         b.addActionListener(this);
+      add(new TextAreaButtons(ta, btns), BorderLayout.CENTER);
+
+      setVisible(true);
+
+   }
+
+   public static void main(String[] args) {
+      new RevLines();
+   }
+
+   @Override
+   public void actionPerformed(ActionEvent e) {
+      JButton b = (JButton)e.getSource();
+      if(b==btns[1])
+         ta.setText("");
+      else if(b==btns[0]){
+         String s=ta.getText();
+         s.split()
+      }
+   }
+
+}
+
+
+
+
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class TextAreaButtons extends JPanel {
+   public TextAreaButtons(JTextArea ta, JButton[] btns) {
+      setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+      setLayout(new BorderLayout(10, 10));
+      JScrollPane pane = new JScrollPane(ta);
+      pane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+      add(pane, BorderLayout.CENTER);
+      JPanel ps = new JPanel();
+      for (int i = 0; i < btns.length; i++)
+         ps.add(btns[i]);
+      add(ps, BorderLayout.SOUTH);
+   }
+
+   public static void main(String[] args) {
+      JFrame f = new JFrame("TextAreaButtons");
+      f.setSize(400, 300);
+      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      JTextArea ta = new JTextArea();
+      JButton[] btns = new JButton[2];
+      btns[0] = new JButton("One");
+      btns[1] = new JButton("Two");
+      f.add(new TextAreaButtons(ta, btns), BorderLayout.CENTER);
+      f.setVisible(true);
+   }
+}
+</pre>
+        </nav>
+        <div>
+            <hr />
+            <h5>만든이 : 2017648052 손민지</h5>
+            <h5>오픈소프트웨어</h5>
+            <h5>
+                출처 : <a href="https://m.blog.naver.com/PostView.nhn?blogId=hjyang0&logNo=153936820&proxyReferer=https%3A%2F%2Fwww.google.com%2F">https://m.blog.naver.com/PostView.nhn?blogId=hjyang0&logNo=153936820&proxyReferer=https%3A%2F%2Fwww.google.com%2F</a> <br />
+            </h5>
+            <br>
+            <br>
+    </center>
+    </div>
+</body>
+<script type="text/javascript">
+        var d = new Date();
+        var currentDate = d.getFullYear() + "년 " + ( d.getMonth() + 1 ) + "월 " + d.getDate() + "일";
+        var currentTime = d.getHours() + "시 " + d.getMinutes() + "분 " + d.getSeconds() + "초";
+        var result = document.getElementById("time-result");
+        result.innerHTML =  currentDate + "TIME" + currentTime ;
+</script>
+</html>
