@@ -1,0 +1,265 @@
+﻿
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="utf-8" />
+    <title>2017648052 손민지</title>
+    <style>
+           h1{
+            color : black;
+            font-family: verdana;
+            background-color:yellow;
+
+            }
+             div{
+            background-color:yellow;
+            color : black;
+
+        }
+            nav {
+
+            display : block;
+            width :500px;
+
+            }
+            p{
+            font-size: 30px;}
+            h2{
+            width:500px}
+            span{
+            style="border: 5px solid yellow;
+            }
+
+    </style>
+</head>
+<body>
+    <br />
+    <center>
+        <h1> </h1>
+        <hr>
+        <nav>
+            <pre>
+
+ 1. 
+class Test{
+    public static void main(String[] args){
+    int[] a = { 9, 4, 2, 1, 5, 8, 0, 7};
+
+    int sum =0;
+    for(int i =0; i <a.length; i++) // a.length() X
+        sum += a[i];
+    System.out.print("합계 =" + sum);
+ }
+}
+
+class Test{
+    public static void main(String[] args){
+    int[] a = { 9, 4, 2, 1, 5, 8, 0, 7};
+
+    int sum =0;
+    for(int n : a)
+        sum += a[i];
+    System.out.print("합계 =" + sum);
+ }
+}
+
+2. 최솟값 구하기
+class Test{
+    public static void main(String[] args){
+    int[] a = { 9, 4, 2, 1, 5, 8, 0, 7};
+    
+    int min = a[0];
+    for (int i = 1; i<a.length; i++)
+                                if (a[i] <min)
+            min = a[i];
+    System.out.print("최솟값 =" + min);
+}
+}
+
+3. 최솟값의 인덱스 구하기
+
+class Test{
+    public static void main(String[] args){
+    int[] a = { 9, 4, 2, 1, 5, 8, 0, 7};
+
+    int min = a[0];
+    int idx = 0; //최소값의 index 값
+    for (int i = 1; i<a.length; i++)
+        if (a[i] <min){
+            min = a[i];
+            idx = i;
+        }
+    System.out.println("최솟값 =" + min);
+    System.out.println("인덱스 =" + idx);
+}
+
+4.
+class Test{
+    public static void main(String[] args){
+    int[] a = { 9, 4, 2, 1, 5, 8, 0, 7};
+
+    int i =5, j=3;
+    int temp = a[i];
+    a[i] = a[j];
+    a[j] = a[i];
+
+    for ( int n:a )
+        System.out.println(n+",");
+    System.out.println();
+}
+
+5. 배열 내용 정력하기
+import java.util.Arrays;
+class Test{
+    public static void main(String[] args){
+    int[] a = { 9, 4, 2, 1, 5, 8, 0, 7};
+
+    Arrays.sort(a);
+
+    for ( int n:a )
+        System.out.println(n+",");
+    System.out.println();
+}
+6. stack 클래스 만들기
+
+
+class Stack{
+ int[] a;
+ int sp;
+ Stack(int capacity){
+    a = new int[capacity];
+    sp = -1;
+}
+ void push(int val){//스택의 꼭데기에 val 이라는 값을 추가
+    sp++;
+    a[sp] = val;// = a[++sp] = val
+
+}
+ int pop(){
+    int temp = a[sp]; // a[sp--]
+    sp--;
+    return temp;//return a[sp--]
+ }
+}
+
+
+class Stack{
+ int[] a;
+ int sp;
+ Stack(int capacity){
+    a = new int[capacity];
+    sp = 0;
+}
+ void push(int val){//스택의 꼭데기에 val 이라는 값을 추가
+
+    a[sp++] = val;
+
+}
+ int pop(){
+
+    return a[--sp];
+ }
+}
+
+
+7. 큐 는 먼저 들어가면 먼저 나간다. 선입 선출
+import java.util.Arrays;
+import java.util.LinkedList;
+class Queue {
+   int a[];
+   int front = 0;
+   int rear = 0;
+   int capacity= 0;
+
+   Queue(int capacity) {
+      this.capacity = capacity;
+      a = new int[capacity];
+   }
+   void add(int val){
+      if(rear > capacity-1) {
+         rear = 0;
+      }
+      a[rear] = val;
+      rear++;
+   }
+   int remove(){
+      if(front > capacity-1) {
+         front = 0;
+      }
+      int enqueue = a[front];
+      front++;
+      return enqueue;
+   }
+}
+
+
+
+class Point {
+public static void main(String[] args) {
+Queue q = new Queue(10);
+int i;
+for (i=0; i<10; i++)
+q.add(i);
+for (i=0; i<10; i++)
+System.out.print(q.remove() + " ");
+System.out.println();
+for (i=0; i<5; i++)
+q.add(i);
+for (i=0; i<5; i++)
+System.out.print(q.remove() + " ");
+}
+}
+
+8.
+class Arrays {
+    static int su( int[] a){
+    int s = 0;
+    for (int n :a)
+        s+= n;
+    return s;
+    }
+    static int min( int[] a){
+    int min = a[0];
+    for (int i =1; i<a.length; i++)
+        if( a[i] < min)
+            min = a[i];
+    return min;
+    }
+    static int indexOfMin( int[] a){
+    int min = a[0];
+    int idx = 0;
+    for (int i =1; i<a.length; i++)
+        if( a[i] < min)
+            min = a[i];
+            idx = i;
+    return idx;
+    }
+    static void swap( int[] a, int n, int m){
+        int temp = a[n];
+        a[n] = a[m];
+        a[m] = temp;
+}
+}
+
+</pre>
+        </nav>
+        <div>
+            <hr />
+            <h5>만든이 : 2017648052 손민지</h5>
+            <h5>오픈소프트웨어</h5>
+            <h5>
+                출처 : <a href="https://m.blog.naver.com/PostView.nhn?blogId=hjyang0&logNo=153936820&proxyReferer=https%3A%2F%2Fwww.google.com%2F">https://m.blog.naver.com/PostView.nhn?blogId=hjyang0&logNo=153936820&proxyReferer=https%3A%2F%2Fwww.google.com%2F</a> <br />
+            </h5>
+            <br>
+            <br>
+    </center>
+    </div>
+</body>
+<script type="text/javascript">
+        var d = new Date();
+        var currentDate = d.getFullYear() + "년 " + ( d.getMonth() + 1 ) + "월 " + d.getDate() + "일";
+        var currentTime = d.getHours() + "시 " + d.getMinutes() + "분 " + d.getSeconds() + "초";
+        var result = document.getElementById("time-result");
+        result.innerHTML =  currentDate + "TIME" + currentTime ;
+</script>
+</html>
